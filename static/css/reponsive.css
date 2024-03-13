@@ -1,0 +1,27 @@
+/*#region =========    Root   ============  */
+@media screen and (min-width: 768px) {
+    :root {
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+    }
+}
+/*#endregion =========    End Root   ============  */
+
+
+/*#region =========    HEADER   ============  */
+@media screen and (max-width: 768px) {
+    .nav {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      background-color: var(--dark-color);
+      color: var(--white-color);
+      width: 100%;
+      height: 100vh;
+      padding: 1.5rem 0;
+      z-index: var(--z-fixed);
+      -webkit-transition: .5s;
+      transition: .5s;
+    }
+}
+/*#endregion =========    End HEADER   ============  */
