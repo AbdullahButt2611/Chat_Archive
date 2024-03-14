@@ -1,5 +1,6 @@
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 /*===== VARIABLES CSS =====*/
 :root {
@@ -7,18 +8,26 @@
   
   /*===== Colores =====*/
   --first-color: #C4284E;
+  --second-color: #FFEBED;
   --dark-color: #4C0519;
-  --dark-color-alt: #530b1f;
+  --dark-color-alt: #5a172a;
   --white-color: #E6E7E9;
+  --pure-white-color: #fff;
   --bg-color: #FFF1F2;
 
   /*===== Fuente y tipografia =====*/
   --body-font: 'Poppins', sans-serif;
+  --noto-font: "Noto Sans", sans-serif;
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
 
   /*===== z index =====*/
   --z-fixed: 100;
+
+  /*===== Font Sizes =====*/
+  --max-heading: 4.5rem;
+  --text-size: 1.25rem;
+  --normal-text: 1rem;
 }
 
 
@@ -33,6 +42,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   font-weight: 500;
+  background-color: var(--bg-color);
 }
 
 ul {
@@ -59,6 +69,11 @@ img {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
+
+p{
+  color: var(--first-color);
+  font-size: var(--text-size);
+}
 /*#endregion =========    End General Layout   ============  */
 
 
@@ -84,20 +99,20 @@ img {
 }
 
 .header__logo {
-  color: var(--white-color);
+  color: var(--bg-color);
 }
 
 .header__toggle {
   font-size: 1.5rem;
-  color: var(--white-color);
+  color: var(--bg-color);
   cursor: pointer;
 }
 
 .nav__content {
   height: 100%;
   -ms-grid-rows: max-content 1fr max-content;
-      grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
-      grid-template-rows: max-content 1fr max-content;
+  grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-rows: max-content 1fr max-content;
   row-gap: 2rem;
 }
 
@@ -116,8 +131,8 @@ img {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-bottom: .8rem;
   width: 56px;
   height: 56px;
@@ -132,7 +147,7 @@ img {
 
 .nav__name {
   display: block;
-  color: var(--white-color);
+  color: var(--bg-color);
 }
 
 .nav__profesion {
@@ -141,8 +156,8 @@ img {
 
 .nav__menu {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 
 .nav__item {
@@ -164,7 +179,7 @@ img {
 }
 
 .nav__social-icon:hover {
-  color: var(--first-color);
+  color: var(--second-color);
 }
 
 /*Aparecer menu*/
@@ -177,6 +192,117 @@ img {
   color: var(--first-color);
 } 
 /*#endregion =========    End HEADER   ============  */
+
+
+/*#region =========    Reusable Classes   ============  */
+.section{
+  padding-top: 4rem;
+}
+
+.max-heading{
+  font-size: var(--max-heading);
+  line-height: 4.75rem;
+  font-weight: 900;
+  font-family: var(--noto-font);
+  color: var(--dark-color);
+}
+
+.button{
+  background-color: var(--first-color);
+  color: var(--pure-white-color);
+  padding: 1rem 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 300ms ease;
+}
+.button:hover{
+  background-color: var(--dark-color);
+}
+.button:focus{
+  transform: scale(0.95);
+}
+/*#endregion =========    End Reusable Classes   ============  */
+
+
+/*#region =========    Index - Hero   ============  */
+.index-hero-section{
+  padding-top: 10rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.index-hero-left{
+  width: 90%;
+  padding-left: 2rem;
+}
+
+.index-hero-left .max-heading{
+  width: 85%;
+}
+
+.index-hero-left > p{
+  font-weight: 300;
+  width: 50%;
+  margin-top: -2rem;
+}
+
+.newsletter{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.index-features{
+  margin-top: 1.5rem;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.index-features .stars i{
+  font-size: var(--text-size);
+  color: #EAB308;
+}
+
+.index-features span{
+  font-size: 2rem;
+  font-weight: 100;
+  color: var(--first-color);
+}
+
+.index-features p{
+  font-size: var(--normal-font-size);
+  font-weight: 100;
+}
+/*#endregion =========    End Index - Hero   ============  */
+
+
+/*#region =========    Input Fields   ============  */
+input{
+  background: white;
+  width: 100%;
+  padding: 1rem;
+  font-size: var(--normal-text);
+  outline: none;
+  border: 1px solid rgb(209, 213, 219);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / .05);
+  border-radius: 0.3rem;
+}
+
+input:focus{
+  outline: 2px solid var(--first-color);
+  border: none;
+}
+/*#endregion =========    End Input Fields   ============  */
 
 
 /*#region =========    General Layout   ============  */

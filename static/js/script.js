@@ -1,4 +1,4 @@
-//#region ============    General Layout   ============ 
+//#region ============    Menu   ============ 
     /*===== MENU SHOW Y HIDDEN =====*/ 
     const navMenu = document.getElementById('nav-menu'),
     toggleMenu = document.getElementById('nav-toggle'),
@@ -29,7 +29,7 @@
         navMenu.classList.remove('show')
     }
     navLink.forEach(n => n.addEventListener('click', linkAction));
-//#endregion =========    End General Layout   ============ 
+//#endregion =========    End Menu   ============ 
 
 
 //#region ============    General Layout   ============ 

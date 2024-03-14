@@ -2,4 +2,47 @@
 {% load static %}
 
 {% block body_content %}
+
+<section class="section index-hero-section">
+    <div class="index-hero-left">
+        <h1 class="max-heading">Store and Display WhatsApp Chats with Ease</h1>
+        <p>Upload your exported files and access your conversations easily!</p>
+
+        <form class="newsletter">
+            <input type="email" name="email" placeholder="Enter your email..." required>
+            <button class="button" type="submit">Upload Chat</button>
+        </form>
+
+        <div class="index-features">
+            <div class="stars">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+            </div>
+            <span>|</span>
+            <p>Easy storage</p>
+            <span>|</span>
+            <p>Readable format</p>
+        </div>
+
+        <div class="index-review">
+            <h4>“Finally, a convenient way to store and view WhatsApp chats!”</h4>
+            <div class="user-review-meta">
+                <div class="user-avatar-container">
+                    <img src="" alt="">
+                </div>
+                <p>Claire Thomas</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="index-hero-right">
+        <svg class="absolute -mr-3 top-8 right-1/2 lg:m-0 lg:left-0" width="404" height="392" fill="none" viewBox="0 0 404 392"><defs><pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="4" height="4" class="text-accent-500/20 dark:text-accent-800" fill="currentColor"></rect></pattern></defs><rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect></svg>
+        <div class="right-cornered"></div>
+        <img src="{% static 'images/index_hero.jpg' %}" alt="">
+    </div>
+</section>
+
 {% endblock body_content %}
