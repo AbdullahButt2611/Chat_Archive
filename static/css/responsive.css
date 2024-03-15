@@ -1,10 +1,26 @@
 /*#region =========    Root   ============  */
+@media screen and (max-width: 1050px) {
+    :root{
+        /*===== Font Sizes =====*/
+        --max-heading: 3.5rem;
+    }
+}
+
 @media screen and (min-width: 768px) {
     :root {
       --normal-font-size: 1rem;
       --small-font-size: .875rem;
     }
-  }
+}
+
+@media screen and (max-width: 650px) {
+    :root{
+        /*===== Font Sizes =====*/
+        --max-heading: 3rem;
+        --text-size: 1rem;
+        --normal-text: 0.85rem;
+    }
+}
 /*#endregion =========    End Root   ============  */
 
 
@@ -117,3 +133,79 @@
     }
 }
 /*#endregion =========    End HEADER   ============  */
+
+
+/*#region =========    Reusable Classes   ============  */
+@media screen and (max-width: 1050px) {
+    .max-heading{
+        line-height: 3.75rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .max-heading{
+        line-height: 3.15rem;
+    }
+}
+/*#endregion =========    End Reusable Classes   ============  */
+
+
+/*#region =========    Index - Hero   ============  */
+@media screen and (max-width: 1050px) {
+    .newsletter{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .newsletter{
+        width: 100%;
+    }
+
+    .index-hero-section{
+        grid-template-columns: 1fr;
+    }
+
+    .index-hero-right svg{
+        width: 70%;
+    }
+
+    .index-hero-right img{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .index-hero-right img{
+        width: 95%;
+        top: 0;
+    }
+
+    .index-hero-section{
+        padding-top: 0rem;
+    }
+
+    .newsletter{
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .newsletter input,
+    .newsletter button
+    {
+        width: 100%
+    }
+
+    .index-hero-left{
+        padding: 0 1rem;
+    }
+}
+/*#endregion =========    End Index - Hero   ============  */
+
+
+
+
+
+/*#region =========    General Layout   ============  */
+/*#endregion =========    End General Layout   ============  */

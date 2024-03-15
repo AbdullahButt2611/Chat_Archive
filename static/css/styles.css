@@ -37,6 +37,11 @@
           box-sizing: border-box;
 }
 
+::selection {
+  color: var(--white-color);
+  background: var(--first-color);
+}
+
 body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
@@ -229,14 +234,14 @@ p{
 
 /*#region =========    Index - Hero   ============  */
 .index-hero-section{
-  padding-top: 10rem;
+  padding-top: 5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
 .index-hero-left{
-  width: 90%;
+  width: 100%;
   padding-left: 2rem;
 }
 
@@ -246,17 +251,20 @@ p{
 
 .index-hero-left > p{
   font-weight: 300;
-  width: 50%;
+  width: 80%;
   margin-top: -2rem;
 }
 
 .newsletter{
-  width: 100%;
-  display: grid;
-  grid-template-columns: 80% 20%;
+  width: 80%;
+  display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
+}
+
+.newsletter input{
+  width: 60%
 }
 
 .index-features{
@@ -282,6 +290,67 @@ p{
 .index-features p{
   font-size: var(--normal-font-size);
   font-weight: 100;
+}
+
+.index-review h4{
+  color: var(--first-color);
+}
+
+.index-review .user-review-meta{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: -1.5rem;
+}
+
+.user-avatar-container{
+  width: 30px;
+  height: 30px;
+  background-color: var(--first-color);
+  padding: 2px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-avatar-container img{
+  border-radius: 50%;
+}
+
+.index-review .user-review-meta p{
+  font-size: var(--normal-font-size);
+}
+
+.index-hero-right{
+  position: relative;
+}
+
+.index-hero-right svg{
+  position: absolute;
+  color: var(--first-color);
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.index-hero-right .right-cornered{
+  width: 50%;
+  background-color: var(--second-color);
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: -2rem;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.index-hero-right img{
+  border-radius: 1rem 0 0 1rem;
+  width: 90%;
+  position: absolute;
+  right: 0;
+  top: 4rem;
+  z-index: 2;
 }
 /*#endregion =========    End Index - Hero   ============  */
 
