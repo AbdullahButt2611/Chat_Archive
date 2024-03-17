@@ -20,16 +20,17 @@
   /*===== Fuente y tipografia =====*/
   --body-font: 'Poppins', sans-serif;
   --noto-font: "Noto Sans", sans-serif;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-
+  
   /*===== z index =====*/
   --z-fixed: 100;
-
+  
   /*===== Font Sizes =====*/
   --max-heading: 4.5rem;
   --text-size: 1.25rem;
   --normal-text: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --small-text: 0.75rem;
 }
 
 
@@ -37,6 +38,8 @@
 *, ::before, ::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 ::selection {
@@ -236,7 +239,7 @@ p{
 
 /*#region =========    Index - Hero   ============  */
 .index-hero-section{
-  padding-top: 5rem;
+  padding-top: 10rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
@@ -249,12 +252,14 @@ p{
 
 .index-hero-left .max-heading{
   width: 85%;
+  padding-bottom: 4rem;
 }
 
 .index-hero-left > p{
   font-weight: 300;
   width: 80%;
   margin-top: -2rem;
+  margin-bottom: 2rem;
 }
 
 .newsletter{
@@ -295,6 +300,7 @@ p{
 }
 
 .index-review h4{
+  margin-top: 2rem;
   color: var(--first-color);
 }
 
@@ -303,7 +309,7 @@ p{
   justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
-  margin-top: -1.5rem;
+  margin-top: 0.5rem;
 }
 
 .user-avatar-container{
@@ -513,7 +519,7 @@ input:focus{
 }
 
 .registration-main .input-field.active {
-  border-bottom-color: #151111;
+  border-bottom-color: var(--text-color);
 }
 
 .registration-main .input-field.active + label {
@@ -577,7 +583,7 @@ input:focus{
   width: 55%;
   left: 45%;
   top: 0;
-  background-color: var(--second-color); /*===================*/
+  background-color: var(--second-color);
   border-radius: 2rem;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -634,7 +640,7 @@ input:focus{
   display: flex;
   flex-direction: column;
   text-align: center;
-  transform: translateY(-1.2rem);
+  transform: translateY(0rem);
   transition: 0.5s;
 }
 
@@ -654,7 +660,7 @@ input:focus{
   display: block;
   width: 0.5rem;
   height: 0.5rem;
-  background-color: #aaa;
+  background-color: var(--text-gray-color);
   margin: 0 0.25rem;
   border-radius: 50%;
   cursor: pointer;
@@ -663,10 +669,25 @@ input:focus{
 
 .registration-main .bullets span.active {
   width: 1.1rem;
-  background-color: #151111;
+  background-color: var(--text-color);
   border-radius: 1rem;
 }
 /*#endregion =========    End User Registration   ============  */
+
+
+/*#region =========    Prompts   ============  */
+.error-container{
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--bg-color);
+  border: 2px solid var(--first-color);
+  border-radius: 0.4rem;
+}
+
+.error-container p{
+  font-size: var(--small-font-size) !important;
+}
+/*#endregion =========    End Prompts   ============  */
 
 
 /*#region =========    General Layout   ============  */

@@ -9,20 +9,20 @@ def index(request):
 
 def login_user(request):
     if request.method=="POST":
-        username = request.POST['username']
+        email = request.POST['email']
         password = request.POST['password']
         verification = verify_login(request)
         if verification == "Verified":
-            user = authenticate(username=username, password=password)
+            user = authenticate(username=email, password=password)
             if user is not None:
                 login(request,user)
                 return redirect('home')
             else:
-                return render(request, 'login.html', {"error": "Invalid Credentials! Please Try Again."})
+                return render(request, 'user_registration.html', {"login_error": "Invalid Credentials! Please Try Again."})
         else:
-            return render(request, 'login.html', {"error": verification})
+            return render(request, 'user_registration.html', {"login_error": verification})
 
-    return render(request, 'login.html')
+    return render(request, 'user_registration.html')
 
 def logout_user(request):
     logout(request)
@@ -35,6 +35,7 @@ def signup(request):
         name = request.POST['name']
         email = request.POST['email']
         password = request.POST['password']
+        print(name, email, password)
         verification = verify_signup(request)
 
         if(verification == "Verified"):
@@ -90,9 +91,9 @@ def verify_signup(request):
     return "Verified"
 
 def verify_login(request):
-    username = request.POST['username']
+    email = request.POST['email']
     password = request.POST['password']
-    if username and password:
+    if email and password:
         return "Verified"
     else:
-        return "Username and Password are Required for Logging In"
+        return "Email and Password are Required for Logging In"

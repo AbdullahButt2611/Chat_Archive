@@ -182,7 +182,7 @@
     }
 
     .index-hero-section{
-        padding-top: 0rem;
+        padding-top: 3rem;
     }
 
     .newsletter{
@@ -298,6 +298,13 @@
 /*#endregion =========    End User Registration   ============  */
 
 
+/*#region =========    Prompts   ============  */
+@media screen and (max-width: 850px) {
+  .error-container{
+    margin-bottom: 2rem;
+  }
+}
+/*#endregion =========    End Prompts   ============  */
 
 
 
