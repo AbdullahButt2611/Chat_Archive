@@ -204,6 +204,100 @@
 /*#endregion =========    End Index - Hero   ============  */
 
 
+/*#region =========    User Registration   ============  */
+@media (max-width: 850px) {
+    .registration-main .box {
+      height: auto;
+      max-width: 550px;
+      overflow: hidden;
+    }
+  
+    .registration-main .box .inner-box {
+      position: static;
+      transform: none;
+      width: revert;
+      height: revert;
+      padding: 2rem;
+    }
+  
+    .registration-main .box .inner-box .forms-wrap {
+      position: revert;
+      width: 100%;
+      height: auto;
+    }
+  
+    .registration-main .box .inner-box .forms-wrap form {
+      max-width: revert;
+      padding: 1.5rem 2.5rem 2rem;
+      transition: transform 0.8s ease-in-out, opacity 0.45s linear;
+    }
+  
+    .registration-main .heading {
+      margin: 2rem 0;
+    }
+  
+    .registration-main .box .inner-box .forms-wrap form.sign-up-form {
+      transform: translateX(100%);
+    }
+  
+    .registration-main.sign-up-mode .box .inner-box .forms-wrap form.sign-in-form {
+      transform: translateX(-100%);
+    }
+  
+    .registration-main.sign-up-mode .box .inner-box .forms-wrap form.sign-up-form {
+      transform: translateX(0%);
+    }
+  
+    .registration-main .carousel {
+      position: revert;
+      height: auto;
+      width: 100%;
+      padding: 3rem 2rem;
+      display: flex;
+    }
+  
+    .registration-main .images-wrapper {
+      display: none;
+    }
+  
+    .registration-main .text-slider {
+      width: 100%;
+    }
+}
+  
+@media (max-width: 530px) {
+    .registration-main {
+      padding: 1rem;
+    }
+  
+    .registration-main .box {
+      border-radius: 2rem;
+    }
+  
+    .registration-main .box .inner-box {
+      padding: 1rem;
+    }
+  
+    .registration-main .carousel {
+      padding: 1.5rem 1rem;
+      border-radius: 1.6rem;
+    }
+  
+    .registration-main .text-wrap {
+      margin-bottom: 1rem;
+    }
+  
+    .registration-main .text-group h2 {
+      font-size: 1.2rem;
+    }
+  
+    .registration-main form {
+      padding: 1rem 2rem 1.5rem;
+    }
+}
+/*#endregion =========    End User Registration   ============  */
+
+
 
 
 

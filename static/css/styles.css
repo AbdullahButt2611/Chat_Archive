@@ -374,6 +374,298 @@ input:focus{
 /*#endregion =========    End Input Fields   ============  */
 
 
+/*#region =========    User Registration   ============  */
+.registration-main{
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #ff8c6b;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.registration-main .box {
+  position: relative;
+  width: 100%;
+  max-width: 1020px;
+  height: 640px;
+  background-color: #fff;
+  border-radius: 3.3rem;
+  box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+}
+
+.registration-main .box .inner-box {
+  position: absolute;
+  width: calc(100% - 4.1rem);
+  height: calc(100% - 4.1rem);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.registration-main .box .inner-box .forms-wrap {
+  position: absolute;
+  height: 100%;
+  width: 45%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  transition: 0.8s ease-in-out;
+}
+
+.registration-main .box .inner-box .forms-wrap form {
+  max-width: 260px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  transition: opacity 0.02s 0.4s;
+}
+
+.registration-main .box .inner-box .forms-wrap form.sign-up-form {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.registration-main .logo {
+  display: flex;
+  align-items: center;
+}
+
+.registration-main .logo img {
+  width: 27px;
+  margin-right: 0.3rem;
+}
+
+.registration-main.logo h4 {
+  font-size: 1.1rem;
+  margin-top: -9px;
+  letter-spacing: -0.5px;
+  color: #151111;
+}
+
+.registration-main .heading h2 {
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #151111;
+}
+
+.registration-main .heading h6 {
+  color: #bababa;
+  font-weight: 400;
+  font-size: 0.75rem;
+  display: inline;
+}
+
+.registration-main .toggle {
+  color: #151111;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.registration-main .toggle:hover {
+  color: #8371fd;
+}
+
+.registration-main .input-wrap {
+  position: relative;
+  height: 37px;
+  margin-bottom: 2rem;
+}
+
+.registration-main .input-field {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #bbb;
+  padding: 0;
+  font-size: 0.95rem;
+  color: #151111;
+  transition: 0.4s;
+}
+
+.registration-main label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  color: #bbb;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.registration-main .input-field.active {
+  border-bottom-color: #151111;
+}
+
+.registration-main .input-field.active + label {
+  font-size: 0.75rem;
+  top: -2px;
+}
+
+.registration-main .sign-btn {
+  display: inline-block;
+  width: 100%;
+  height: 43px;
+  background-color: #151111;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+  transition: 0.3s;
+}
+
+.registration-main .sign-btn:hover {
+  background-color: #8371fd;
+}
+
+.registration-main .text {
+  color: #bbb;
+  font-size: 0.7rem;
+}
+
+.registration-main .text a {
+  color: #bbb;
+  transition: 0.3s;
+}
+
+.registration-main .text a:hover {
+  color: #8371fd;
+}
+
+.registration-main.sign-up-mode .box .inner-box .forms-wrap form.sign-in-form {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.registration-main.sign-up-mode .box .inner-box .forms-wrap form.sign-up-form {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.registration-main.sign-up-mode .box .inner-box .forms-wrap {
+  left: 55%;
+}
+
+.registration-main.sign-up-mode .carousel {
+  left: 0%;
+}
+
+.registration-main .carousel {
+  position: absolute;
+  height: 100%;
+  width: 55%;
+  left: 45%;
+  top: 0;
+  background-color: #ffe0d2;
+  border-radius: 2rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding-bottom: 2rem;
+  overflow: hidden;
+  transition: 0.8s ease-in-out;
+}
+
+.registration-main .images-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.registration-main .image {
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.5s;
+}
+
+.registration-main .img-1 {
+  transform: translate(0, -50px);
+}
+
+.registration-main .img-2 {
+  transform: scale(0.4, 0.5);
+}
+
+.registration-main .img-3 {
+  transform: scale(0.3) rotate(-20deg);
+}
+
+.registration-main .image.show {
+  opacity: 1;
+  transform: none;
+}
+
+.registration-main .text-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.registration-main .text-wrap {
+  max-height: 2.2rem;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.registration-main .text-group {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transform: translateY(-1.2rem);
+  transition: 0.5s;
+}
+
+.registration-main .text-group h2 {
+  line-height: 2.2rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.registration-main .bullets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registration-main .bullets span {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #aaa;
+  margin: 0 0.25rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.registration-main .bullets span.active {
+  width: 1.1rem;
+  background-color: #151111;
+  border-radius: 1rem;
+}
+/*#endregion =========    End User Registration   ============  */
+
+
 /*#region =========    General Layout   ============  */
 /*#endregion =========    End General Layout   ============  */
 
