@@ -14,6 +14,8 @@
   --white-color: #E6E7E9;
   --pure-white-color: #fff;
   --bg-color: #FFF1F2;
+  --text-color: #151111;
+  --text-gray-color: #999999;
 
   /*===== Fuente y tipografia =====*/
   --body-font: 'Poppins', sans-serif;
@@ -379,7 +381,7 @@ input:focus{
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background-color: #ff8c6b;
+  background-color: var(--first-color);
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -392,7 +394,7 @@ input:focus{
   width: 100%;
   max-width: 1020px;
   height: 640px;
-  background-color: #fff;
+  background-color: var(--pure-white-color);
   border-radius: 3.3rem;
   box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
 }
@@ -450,24 +452,25 @@ input:focus{
   font-size: 1.1rem;
   margin-top: -9px;
   letter-spacing: -0.5px;
-  color: #151111;
+  color: var(--dark-color) !important;
 }
 
 .registration-main .heading h2 {
   font-size: 2.1rem;
-  font-weight: 600;
-  color: #151111;
+  font-weight: 900;
+  color: var(--first-color);
+  font-family: var(--noto-font);
 }
 
 .registration-main .heading h6 {
-  color: #bababa;
+  color: var(--text-gray-color);
   font-weight: 400;
   font-size: 0.75rem;
   display: inline;
 }
 
 .registration-main .toggle {
-  color: #151111;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 0.75rem;
   font-weight: 500;
@@ -475,7 +478,7 @@ input:focus{
 }
 
 .registration-main .toggle:hover {
-  color: #8371fd;
+  color: var(--first-color);
 }
 
 .registration-main .input-wrap {
@@ -494,7 +497,7 @@ input:focus{
   border-bottom: 1px solid #bbb;
   padding: 0;
   font-size: 0.95rem;
-  color: #151111;
+  color: var(--text-color);
   transition: 0.4s;
 }
 
@@ -522,8 +525,8 @@ input:focus{
   display: inline-block;
   width: 100%;
   height: 43px;
-  background-color: #151111;
-  color: #fff;
+  background-color: var(--first-color);
+  color: var(--pure-white-color);
   border: none;
   cursor: pointer;
   border-radius: 0.8rem;
@@ -533,21 +536,21 @@ input:focus{
 }
 
 .registration-main .sign-btn:hover {
-  background-color: #8371fd;
+  background-color: var(--dark-color);
 }
 
 .registration-main .text {
-  color: #bbb;
+  color: var(--text-gray-color);
   font-size: 0.7rem;
 }
 
 .registration-main .text a {
-  color: #bbb;
+  color: var(--first-color);
   transition: 0.3s;
 }
 
 .registration-main .text a:hover {
-  color: #8371fd;
+  color: var(--dark-color);
 }
 
 .registration-main.sign-up-mode .box .inner-box .forms-wrap form.sign-in-form {
@@ -574,7 +577,7 @@ input:focus{
   width: 55%;
   left: 45%;
   top: 0;
-  background-color: #ffe0d2;
+  background-color: var(--second-color); /*===================*/
   border-radius: 2rem;
   display: grid;
   grid-template-rows: auto 1fr;

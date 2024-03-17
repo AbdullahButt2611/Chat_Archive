@@ -1,4 +1,6 @@
-from django.shortcuts import render
+import re
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 from django.contrib.auth import logout, login, authenticate
 
 # Create your views here.
@@ -29,31 +31,25 @@ def logout_user(request):
 def signup(request):
     context = {}
 
-    # if request.method == "POST":
-    #     firstname = request.POST['firstname']
-    #     lastname = request.POST['lastname']
-    #     email = request.POST['email']
-    #     username = request.POST['username']
-    #     password = request.POST['password']
-    #     country = request.POST['country']
-    #     dob = request.POST['dob']
-    #     verification = verify_signup(request)
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        password = request.POST['password']
+        verification = verify_signup(request)
 
-    #     if(verification == "Verified"):
-    #         try:
-    #             data = User.objects.create_user(first_name=firstname, last_name=lastname, email=email, username=username, password=password)
-    #             data.save()
-    #             user = UserMeta.objects.create(user=data, country=country, dob=dob)
-    #             user.save()
-    #             return redirect('login')
+        if(verification == "Verified"):
+            try:
+                data = User.objects.create_user(first_name=name, email=email, username=email, password=password)
+                data.save()
+                return redirect('login')
 
-    #         except Exception as e:
-    #             context['error'] = "Username is already taken"
-    #             return render(request, 'signup.html', context)
-    #     else:
-    #         context['form_values'] = {"firstname": firstname, "lastname": lastname, "email": email, "username": username}
-    #         context['error'] = verification
-    #         return render(request, 'signup.html', context)
+            except Exception as e:
+                context['error'] = "Email is already taken"
+                return render(request, 'user_registration.html', context)
+        else:
+            context['form_values'] = {"name": name,  "email": email}
+            context['signup_error'] = verification
+            return render(request, 'user_registration.html', context)
 
 
     return render(request, 'user_registration.html', context)
@@ -61,29 +57,18 @@ def signup(request):
 # ======================    HELPER FUNCTIONS    =========================
 
 def verify_signup(request):
-    firstname = request.POST['firstname']
-    lastname = request.POST['lastname']
+    name = request.POST['name']
     email = request.POST['email']
-    username = request.POST['username']
     password = request.POST['password']
-    country = request.POST['country']
-    dob = request.POST['dob']
     
-    if not firstname.strip() or not lastname.strip():
-        return "Firstname and Lastname cannot be empty."
+    if not name.strip():
+        return "Name Field cannot be empty."
     
-    if not firstname.isalpha() or not lastname.isalpha():
-        return "Firstname and Lastname should only contain alphabet."
+    if not all(char.isalpha() or char.isspace() for char in name):
+        return "Name should only contain alphabets and spaces."
     
     if not re.match(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$', email):
         return "Email Should be in a proper format"
-    
-    if len(username) < 4 and len(username) > 16:
-        return "Username length should be between 3 and 15 characters."
-    
-    print("Username ", username.isalnum())
-    if not (username.isalnum() or '_' in username):
-        return "Username can only contain alphanumeric characters or underscores."
     
     if len(password) < 8:
         return "Password length should be at least 8 characters."
