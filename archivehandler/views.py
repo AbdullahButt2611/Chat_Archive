@@ -55,6 +55,9 @@ def signup(request):
 
     return render(request, 'user_registration.html', context)
 
+def dashboard(request):
+    return render(request, "dashboard.html")
+
 # ======================    HELPER FUNCTIONS    =========================
 
 def verify_signup(request):

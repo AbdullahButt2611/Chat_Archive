@@ -1,7 +1,7 @@
 {% load static %}
 
 <header class="header">
-    <a href="#" class="header__logo">Chat Archive</a>
+    <a href="{% url 'home' %}" class="header__logo">Chat Archive</a>
 
     <ion-icon name="menu-outline" class="header__toggle" id="nav-toggle"></ion-icon>
 
@@ -16,7 +16,7 @@
                 </div>
                 
                 <div>
-                    <a href="#" class="nav__name">Chat Archive</a>
+                    <a href="{% url 'home' %}" class="nav__name">Chat Archive</a>
                     <span class="nav__profesion">WhatsApp Memories Organizer</span>
                 </div>
             </div>
