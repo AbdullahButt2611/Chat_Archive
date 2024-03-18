@@ -8,7 +8,7 @@
     <div class="head">
         <div class="user-details">
             <p class="title">Welcome Back</p>
-            <p class="name">Muhammad Abdullah Butt</p>
+            <p class="name">{{user.first_name}}</p>
         </div>
     </div>
     
@@ -19,9 +19,9 @@
             <ul>
                 <li>
                     <a href="#">
-                    <i class="icon ph-bold ph-user"></i>
+                    <i class='bx bxs-user'></i>
                     <span class="text">Audience</span>
-                    <i class='bx bx-chevron-down'></i>
+                    <i class='bx bx-chevron-down arrow'></i>
                     </a>
                     <ul class="sub-menu">
                     <li>
@@ -42,17 +42,17 @@
         <div class="menu">
             <p class="title">Systems</p>
             <ul>
-                <li class="active">
-                    <a href="#">
-                    <i class="icon ph-bold ph-house-simple"></i>
+                <li class="{% if request.path == '/dashboard/' %}active{% endif %}">
+                    <a href="{% url "dashboard" %}">
+                    <i class='bx bxs-dashboard' ></i>
                     <span class="text">Dashboard</span>
                     </a>
                 </li>
 
-                <li>
-                    <a href="#">
-                    <i class="icon ph-bold ph-gear"></i>
-                    <span class="text">Settings</span>
+                <li class="{% if request.path == '/add_friend/' %}active{% endif %}">
+                    <a href="{% url "add_friend" %}">
+                        <i class='bx bxs-user-plus'></i>
+                        <span class="text">Add New Friend</span>
                     </a>
                 </li>
             </ul>

@@ -58,6 +58,9 @@ def signup(request):
 def dashboard(request):
     return render(request, "dashboard.html")
 
+def add_friend(request):
+    return render(request, "add_friend.html")
+
 # ======================    HELPER FUNCTIONS    =========================
 
 def verify_signup(request):

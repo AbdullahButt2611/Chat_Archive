@@ -42,7 +42,7 @@
 
 /*#region =========    HEADER   ============  */
 @media screen and (max-width: 768px) {
-    .nav {
+    .header .nav {
         position: fixed;
         top: 0;
         left: -100%;
@@ -66,7 +66,7 @@
         display: none;
     }
 
-    .nav {
+    .header .nav {
         width: 100%;
     }
 
@@ -307,6 +307,38 @@
 /*#endregion =========    End Prompts   ============  */
 
 
+/*#region =========    Sidebar   ============  */
+@media screen and (max-width: 768px) {
+  .sidebar{
+    top: 3rem;
+    height: 93vh;
+  }
+}
+/*#endregion =========    End Sidebar   ============  */
 
-/*#region =========    General Layout   ============  */
-/*#endregion =========    End General Layout   ============  */
+
+/*#region =========    Dashboad Hero   ============  */
+@media screen and (max-width: 1120px) {
+  .dashboard-hero-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-hero-card:last-child{
+    grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .dashboard-hero-container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .dashboard-hero-card:last-child{
+    grid-column: span 1;
+  }
+}
+/*#endregion =========    End Dashboad Hero   ============  */
+
+
+/*#region =========    General   ============  */
+/*#endregion =========    End General   ============  */

@@ -1,6 +1,6 @@
 //#region ============    Menu   ============ 
     /*===== MENU SHOW Y HIDDEN =====*/ 
-    const navMenu = document.getElementById('nav-menu'),
+    const navMenu = document.querySelector('.header .nav'),
     toggleMenu = document.getElementById('nav-toggle'),
     closeMenu = document.getElementById('nav-close')
 
@@ -76,5 +76,32 @@ bullets.forEach((bullet) => {
 //#endregion =========    End User Registration   ============ 
 
 
-//#region ============    General Layout   ============ 
-//#endregion =========    End General Layout   ============ 
+//#region ============    Sidebar   ============ 
+$(".menu > ul > li").click(function (e) {
+  // remove active from already active
+  $(this).siblings().removeClass("active");
+
+  // add active to clicked
+  $(this).toggleClass("active");
+
+  // if has sub menu open it
+  $(this).find("ul").slideToggle();
+
+  // close other sub menu if any open
+  $(this).siblings().find("ul").slideUp();
+
+  // remove active class of sub menu items
+  $(this).siblings().find("ul").find("li").removeClass("active");
+});
+
+$(".menu-btn").click(function () {
+  console.log($(".sidebar"))
+  $(".sidebar").toggleClass("active");
+});
+//#endregion =========    End Sidebar   ============ 
+
+
+//#region ============    General    ============ 
+//#endregion =========    End General    ============ 
+
+

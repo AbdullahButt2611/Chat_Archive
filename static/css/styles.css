@@ -26,6 +26,7 @@
   
   /*===== Font Sizes =====*/
   --max-heading: 4.5rem;
+  --medium-heading: 2.5rem;
   --text-size: 1.25rem;
   --normal-text: 1rem;
   --normal-font-size: .938rem;
@@ -193,7 +194,7 @@ p{
 }
 
 /*Aparecer menu*/
-.nav.show {
+.header .nav.show {
   left: 0;
 }
 
@@ -692,15 +693,14 @@ input:focus{
 
 /*#region =========    Sidebar   ============  */
 .framer-container {
-  display: flex;
-  align-items: center;
   width: 100%;
-  min-height: 100vh;
+  position: relative;
 }
 
 .sidebar {
-  position: relative;
-  top: 2rem;
+  position: fixed;
+  top: 4rem;
+  left: 0;
   width: 256px;
   height: 90vh;
   display: flex;
@@ -711,7 +711,7 @@ input:focus{
   border-radius: 0 1rem 1rem 0;
   transition: all 0.3s;
 }
-/* -------- */
+
 .sidebar .head {
   display: flex;
   justify-content: flex-start;
@@ -725,7 +725,7 @@ input:focus{
 .menu .title {
   font-size: 10px;
   font-weight: 500;
-  color: #757575;
+  color: var(--text-gray-color);
   text-transform: uppercase;
   margin-bottom: 10px;
 }
@@ -751,17 +751,21 @@ input:focus{
   gap: 10px;
   font-size: 14px;
   font-weight: 500;
-  color: #757575;
+  color: var(--text-gray-color);
   text-decoration: none;
   padding: 12px 8px;
-  border-radius: 8px;
+  border-radius: 8px !important;
   transition: all 0.3s;
 }
 
 .menu ul li > a:hover,
 .menu ul li.active > a {
-  color: #000;
-  background-color: #f6f6f6;
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+
+.menu .active{
+  background-color: transparent;
 }
 
 .menu ul li .icon {
@@ -811,9 +815,9 @@ input:focus{
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #757575;
+  color: var(--text-gray-color);
   border: 2px solid #f6f6f6;
-  background-color: #fff;
+  background-color: var(--pure-white-color);
 }
 
 .menu-btn:hover i {
@@ -826,6 +830,7 @@ input:focus{
 
 .sidebar.active {
   width: 92px;
+  background-color: var(--pure-white-color);
 }
 
 .sidebar.active .menu-btn i {
@@ -858,7 +863,7 @@ input:focus{
   transform: translateY(-50%);
   padding: 10px;
   border-radius: 4px;
-  color: #fff;
+  color: var(--pure-white-color);
   background-color: #000;
   opacity: 0;
   visibility: hidden;
@@ -892,10 +897,54 @@ input:focus{
   border-radius: 20px;
   padding: 10px 20px;
   border: 1px solid #f6f6f6;
-  background-color: #fff;
+  background-color: var(--pure-white-color);
   box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.1);
 }
 /*#endregion =========    End Sidebar   ============  */
+
+
+/*#region =========    Dashboard - Hero   ============  */
+.framer-div{
+  padding-left: 7rem;
+  padding-right: 1rem;
+}
+
+.dashboard-hero-container{
+  margin-top: 5rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.dashboard-hero-card{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: var(--pure-white-color);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.dashboard-hero-content i{
+  font-size: var(--medium-heading);
+  color: var(--first-color);
+  margin-bottom: 1.2rem;
+}
+
+.dashboard-hero-content h3{
+  font-size: var(--small-text-size);
+  color: var(--text-gray-color);
+}
+
+.dashboard-hero-card h1{
+  font-size: var(--max-heading);
+  font-weight: 900;
+  color: var(--first-color);
+}
+/*#endregion =========    End Dashboard - Hero   ============  */
 
 
 /*#region =========    General   ============  */

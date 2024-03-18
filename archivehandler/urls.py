@@ -8,6 +8,7 @@ urlpatterns = [
     path('logout/', views.logout_user, name='logout'),
     path('register/', views.signup, name='signup'),
     path('dashboard/', views.dashboard, name='dashboard'),
+    path('add_friend/', views.add_friend, name='add_friend'),
 
     # Password Reset URLS
     path( 'password_ reset/' ,auth_views.PasswordResetView.as_view(),name='password_reset'),
