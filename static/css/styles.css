@@ -1291,6 +1291,168 @@ input:focus{
 /*#endregion =========    End Upload Chat   ============  */
 
 
+/*#region =========    View Chat   ============  */
+.chat-main-div{
+  width: 100%;
+  min-height: 100vh;
+  background-image: radial-gradient(#c4284f15 2px, transparent 0);  /* Add your background pattern here */
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+  padding-top: 7rem;
+}
+
+.notification {
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  position: relative;
+  max-width: 60%;
+  width: auto;
+  padding: 0.4rem 0.4rem 1rem;
+  background: #29292c;
+  border-radius: 1rem;
+  overflow: hidden;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
+  --color: #32a6ff;
+  margin-bottom: 1rem;
+}
+
+.notification.you{
+  margin-left: 40%;
+  background-color: var(--dark-color);
+}
+
+.notification:before {
+  position: absolute;
+  content: "";
+  inset: 0.0625rem;
+  border-radius: 0.9375rem;
+  background: #18181b;
+  z-index: 2
+}
+
+.notification:after {
+  position: absolute;
+  content: "";
+  width: 0.25rem;
+  inset: 0.65rem auto 0.65rem 0.75rem;
+  border-radius: 0.125rem;
+  --color: #32a6ff;;
+  transition: transform 300ms ease;
+  z-index: 4;
+  background: var(--gradient);
+}
+
+.notification.you:after{
+  inset: 0.65rem 0.75rem  0.65rem auto;
+  background: linear-gradient(to bottom, var(--first-color), var(--second-color));
+}
+
+.notification:hover:after {
+  transform: translateX(0.15rem)
+}
+
+.notititle {
+  color: var(--color);
+  padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+}
+
+.notification.you .notititle{
+  color: #e25779;
+}
+
+.notification:hover .notititle {
+  transform: translateX(0.15rem)
+}
+
+.notibody {
+  color: #99999d;
+  padding: 0 1.25rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+  word-wrap: break-word;
+}
+
+.notification.you .notibody{
+  color: var(--white-color);
+}
+
+.notification:hover .notibody {
+  transform: translateX(0.25rem)
+}
+
+.notiglow,
+.notiborderglow {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle closest-side at center, white, transparent);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.notiglow {
+  z-index: 3;
+}
+
+.notiborderglow {
+  z-index: 1;
+}
+
+.notification:hover .notiglow {
+  opacity: 0.1
+}
+
+.notification:hover .notiborderglow {
+  opacity: 0.1
+}
+
+.note {
+  color: var(--color);
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 0.9rem;
+  width: 75%;
+}
+
+.date-container{
+  margin-left: auto;
+  margin-right: auto;
+  width: 8rem;
+  padding: 0.6rem;
+  text-align: center;
+  font-size: var(--small-font-size);
+  background-color: var(--dark-color);
+  margin-bottom: 1.5rem;
+  color: var(--pure-white-color);
+  border-radius: 1rem;
+}
+
+.notitime{
+  color: white;
+  z-index: 2;
+  margin-top: 1rem;
+  font-size: var(--small-text);
+  width: 100%;text-align: right;
+  padding-right: 1rem;
+}
+
+.notification.you .notitime{
+  padding-right: 2rem;
+}
+/*#endregion =========    End View Chat   ============  */
+
+
 /*#region =========    General   ============  */
 /*#endregion =========    End General   ============  */
 

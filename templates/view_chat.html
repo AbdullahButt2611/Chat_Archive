@@ -1,0 +1,33 @@
+{% extends "framer.html" %}
+{% load static %}
+
+{% block framer_content %}
+
+<div class="framer-div chat-main-div">
+
+    {% for message in messages %}
+        {% if message.show_date %}
+            <p class="date-container">{{ message.date }}</p>
+        {% endif %}
+
+        {% if message.is_user %}
+            <div class="notification you">
+                <div class="notiglow"></div>
+                <div class="notiborderglow"></div>
+                <div class="notititle">{{request.user.first_name}}</div>
+                <div class="notibody">{{message.text}}</div>
+                <p class="notitime">{{message.time}}</p>
+            </div>
+        {% else %}
+            <div class="notification">
+                <div class="notiglow"></div>
+                <div class="notiborderglow"></div>
+                <div class="notititle">{{friend.display_name}}</div>
+                <div class="notibody">{{message.text}}</div>
+                <p class="notitime">{{message.time}}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock framer_content %}

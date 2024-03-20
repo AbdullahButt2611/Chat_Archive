@@ -10,6 +10,7 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('add_friend/', views.add_friend, name='add_friend'),
     path('upload_chat/', views.upload_chat, name='upload_chat'),
+    path('chat/<slug:chat_slug>/', views.view_chat, name='view_chat'),
 
     # Password Reset URLS
     path( 'password_ reset/' ,auth_views.PasswordResetView.as_view(),name='password_reset'),

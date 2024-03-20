@@ -27,7 +27,7 @@
                     <ul class="sub-menu">
                         {% for chat in chats %}
                             <li>
-                                <a href="#">
+                                <a href="{% url "view_chat" chat.slug %}">
                                 <span class="text">{{ chat.start_date }} - {{ chat.end_date }}</span>
                                 </a>
                             </li>

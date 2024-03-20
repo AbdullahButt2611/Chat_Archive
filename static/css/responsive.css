@@ -349,5 +349,34 @@
 /*#endregion =========    End Add New Friend   ============  */
 
 
+/*#region =========    View Chat   ============  */
+@media screen and (max-width:775px) {
+  .notification {
+    max-width: 80%;
+  }
+  
+  .notification.you{
+    margin-left: 20%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .chat-main-div{
+    padding-top: 2rem;
+  }
+}
+
+@media screen and (max-width:525px) {
+  .notification {
+    max-width: 95%;
+  }
+  
+  .notification.you{
+    margin-left: 5%;
+  }
+}
+/*#endregion =========    End View Chat   ============  */
+
+
 /*#region =========    General   ============  */
 /*#endregion =========    End General   ============  */

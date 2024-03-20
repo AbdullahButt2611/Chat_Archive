@@ -132,6 +132,25 @@ def upload_chat(request):
         
     return render(request, 'upload_chat.html', context)
 
+@login_required
+def view_chat(request, chat_slug):
+    context = {}
+    friends_chats = get_friends_chats(request)
+    context['friends_chats'] = friends_chats
+
+    chat = Chat.objects.get(slug=chat_slug)
+    messages = Message.objects.filter(chat=chat)
+    print(messages)
+
+    previous_date = None
+    for message in messages:
+        message.show_date = message.date != previous_date
+        previous_date = message.date
+
+    context['messages'] = messages
+    context['friend'] = chat.friend
+    return render(request, 'view_chat.html', context)
+
 # ======================    HELPER FUNCTIONS    =========================
 
 def verify_signup(request):
@@ -281,10 +300,12 @@ def process_chat(request, file_content, context):
             parts_of_line = line.split('-')
             chat_dict['chat_date'], chat_dict['chat_time'] = extract_datetime(parts_of_line[0])
 
-            if parts_of_line[1].strip() in SYSTEM_MESSAGES:
+            rest_part = '-'.join(parts_of_line[1:])
+
+            if rest_part.strip() in SYSTEM_MESSAGES:
                 continue
 
-            right_part_list = parts_of_line[1].split(':')
+            right_part_list = rest_part.split(':')
             if right_part_list[1].strip() in SYSTEM_MESSAGES:
                 continue
 
