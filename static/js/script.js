@@ -104,7 +104,8 @@ $(".menu-btn").click(function () {
 //#region ============    Upload Chat    ============ 
 let fileInput = document.querySelector('.contact-container .custum-file-upload input');
 let fileName = document.querySelector('#file_name');
-console.log(fileInput);
+let submitBtn = document.querySelector('.addfriend-container form .button-container');
+let loader = document.querySelector('.addfriend-container form .typewriter');
 if(fileInput){
   fileInput.addEventListener('change', function(event){
     const file = event.target.files[0];
@@ -116,6 +117,16 @@ if(fileInput){
     }
   })
 }
+
+if (loader){
+  submitBtn.addEventListener('click', () => {
+    loader.style.display = 'block';
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 5000);
+  })
+}
+
 //#endregion =========    End Upload Chat    ============ 
 
 

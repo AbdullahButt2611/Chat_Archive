@@ -2,6 +2,8 @@ from . import views
 from django.urls import path
 from django.contrib.auth import views as auth_views
 
+handler404 = 'archivehandler.views.handler404'
+
 urlpatterns = [
     path('', views.index, name='home'),
     path('login/', views.login_user, name='login'),

@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, login, authenticate
+# from django.views.decorators.csrf import csrf_exempt
 
 SYSTEM_MESSAGES = [
     "Messages and calls are end-to-end encrypted. No one outside of this chat, not even WhatsApp, can read or listen to them. Tap to learn more.",
@@ -19,6 +20,7 @@ date_pattern = r'^\d{4}-\d{2}-\d{2}'
 def index(request):
     return render(request, "index.html")
 
+# @csrf_exempt
 def login_user(request):
     if request.method=="POST":
         email = request.POST['email']
@@ -40,6 +42,7 @@ def logout_user(request):
     logout(request)
     return redirect('login')
 
+# @csrf_exempt
 def signup(request):
     context = {}
 
@@ -86,6 +89,7 @@ def dashboard(request):
     }
     return render(request, "dashboard.html", context)
 
+# @csrf_exempt
 @login_required
 def add_friend(request):
     friends_chats = get_friends_chats(request)
@@ -111,6 +115,7 @@ def add_friend(request):
             return render(request, "add_friend.html", context)
     return render(request, "add_friend.html", context)
 
+# @csrf_exempt
 @login_required
 def upload_chat(request):
     context = {}
@@ -150,6 +155,9 @@ def view_chat(request, chat_slug):
     context['messages'] = messages
     context['friend'] = chat.friend
     return render(request, 'view_chat.html', context)
+
+def handler404(request, exception):
+    return render(request, '404.html', status=404)
 
 # ======================    HELPER FUNCTIONS    =========================
 
