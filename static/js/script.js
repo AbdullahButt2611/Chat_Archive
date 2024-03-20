@@ -101,6 +101,24 @@ $(".menu-btn").click(function () {
 //#endregion =========    End Sidebar   ============ 
 
 
+//#region ============    Upload Chat    ============ 
+let fileInput = document.querySelector('.contact-container .custum-file-upload input');
+let fileName = document.querySelector('#file_name');
+console.log(fileInput);
+if(fileInput){
+  fileInput.addEventListener('change', function(event){
+    const file = event.target.files[0];
+    if(file){
+      fileName.innerText = file.name;
+    }
+    else{
+      fileName.innerText = 'Click to upload image';
+    }
+  })
+}
+//#endregion =========    End Upload Chat    ============ 
+
+
 //#region ============    General    ============ 
 //#endregion =========    End General    ============ 
 

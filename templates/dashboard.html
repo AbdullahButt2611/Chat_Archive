@@ -9,7 +9,7 @@
             <i class='bx bxs-group'></i>
             <h3>Total Friends</h3>
         </div>
-        <h1 class="dashboard-count">01</h1>
+        <h1 class="dashboard-count">{{total_friends_count}}</h1>
     </div>
 
     <div class="dashboard-hero-card">
@@ -17,16 +17,16 @@
             <i class='bx bxs-conversation' ></i>
             <h3>Total Chats</h3>
         </div>
-        <h1 class="dashboard-count">01</h1>
+        <h1 class="dashboard-count">{{total_chats_count}}</h1>
     </div>
 
     <div class="dashboard-hero-card">
         <div class="dashboard-hero-content">
             <i class='bx bx-user-circle'></i>
             <h3>Best Friend's Chats</h3>
-            <p>Abdullah Butt</p>
+            <p> {{ friend_with_max_messages.display_name }}</p>
         </div>
-        <h1 class="dashboard-count">01</h1>
+        <h1 class="dashboard-count">{{ friend_with_max_messages.num_messages }}</h1>
     </div>
 </div>
 

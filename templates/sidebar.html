@@ -17,25 +17,24 @@
             <p class="title">Chats</p>
 
             <ul>
+                {% for friend, chats in friends_chats.items %}
                 <li>
                     <a href="#">
                     <i class='bx bxs-user'></i>
-                    <span class="text">Audience</span>
+                    <span class="text">{{ friend.name }}</span>
                     <i class='bx bx-chevron-down arrow'></i>
                     </a>
                     <ul class="sub-menu">
-                    <li>
-                        <a href="#">
-                        <span class="text">Users</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                        <span class="text">Subscribers</span>
-                        </a>
-                    </li>
+                        {% for chat in chats %}
+                            <li>
+                                <a href="#">
+                                <span class="text">{{ chat.start_date }} - {{ chat.end_date }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </li>
+                {% endfor %}
             </ul>
         </div>
 
@@ -53,6 +52,13 @@
                     <a href="{% url "add_friend" %}">
                         <i class='bx bxs-user-plus'></i>
                         <span class="text">Add New Friend</span>
+                    </a>
+                </li>
+
+                <li class="{% if request.path == '/upload_chat/' %}active{% endif %}">
+                    <a href="{% url "upload_chat" %}">
+                        <i class='bx bx-cloud-upload'></i>
+                        <span class="text">Upload Chat</span>
                     </a>
                 </li>
             </ul>

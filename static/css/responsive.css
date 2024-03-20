@@ -340,5 +340,14 @@
 /*#endregion =========    End Dashboad Hero   ============  */
 
 
+/*#region =========    Add New Friend   ============  */
+@media screen and (max-width: 768px) {
+  .addfriend-container{
+    padding-top: 2rem;
+  }
+}
+/*#endregion =========    End Add New Friend   ============  */
+
+
 /*#region =========    General   ============  */
 /*#endregion =========    End General   ============  */
